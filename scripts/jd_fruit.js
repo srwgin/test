@@ -1,5 +1,5 @@
 /*
-东东水果:脚本更新地址 https://raw.githubusercontent.com/shuye72/MyActions/main/scripts/jd_fruit.js
+东东水果:脚本更新地址 https://raw.githubusercontent.com/shuye73/MyActions/main/scripts/jd_fruit.js
 更新时间：2021-1-9
 东东农场活动链接：https://h5.m.jd.com/babelDiy/Zeus/3KSjXqQabiTuD1cJ28QskrpWoBKT/index.html
 已支持IOS双京东账号,Node.js支持N个京东账号
@@ -9,17 +9,14 @@
 ==========================Quantumultx=========================
 [task_local]
 #jd免费水果
-5 6-18/6 * * * https://raw.githubusercontent.com/shuye72/MyActions/main/scripts/jd_fruit.js, tag=东东农场, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdnc.png, enabled=true
+5 6-18/6 * * * https://raw.githubusercontent.com/shuye73/MyActions/main/scripts/jd_fruit.js, tag=东东农场, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdnc.png, enabled=true
 =========================Loon=============================
 [Script]
-cron "5 6-18/6 * * *" script-path=https://raw.githubusercontent.com/shuye72/MyActions/main/scripts/jd_fruit.js,tag=东东农场
-
+cron "5 6-18/6 * * *" script-path=https://raw.githubusercontent.com/shuye73/MyActions/main/scripts/jd_fruit.js,tag=东东农场
 =========================Surge============================
-东东农场 = type=cron,cronexp="5 6-18/6 * * *",wake-system=1,timeout=120,script-path=https://raw.githubusercontent.com/shuye72/MyActions/main/scripts/jd_fruit.js
-
+东东农场 = type=cron,cronexp="5 6-18/6 * * *",wake-system=1,timeout=120,script-path=https://raw.githubusercontent.com/shuye73/MyActions/main/scripts/jd_fruit.js
 =========================小火箭===========================
-东东农场 = type=cron,script-path=https://raw.githubusercontent.com/shuye72/MyActions/main/scripts/jd_fruit.js, cronexpr="5 6-18/6 * * *", timeout=200, enable=true
-
+东东农场 = type=cron,script-path=https://raw.githubusercontent.com/shuye73/MyActions/main/scripts/jd_fruit.js, cronexpr="5 6-18/6 * * *", timeout=200, enable=true
 jd免费水果 搬的https://github.com/liuxiaoyucc/jd-helper/blob/a6f275d9785748014fc6cca821e58427162e9336/fruit/fruit.js
 */
 const $ = new Env('东东农场');
@@ -115,7 +112,7 @@ async function jdFruit() {
       await predictionFruit();//预测水果成熟时间
     } else {
       console.log(`初始化农场数据异常, 请登录京东 app查看农场0元水果功能是否正常,农场初始化数据: ${JSON.stringify($.farmInfo)}`);
-      message = `【京东账号${$.index}】 ${$.nickName || $.UserName}\n【数据异常】请手动登录京东app查看此账号${$.name}是否正常`;
+      message = `【数据异常】请手动登录京东app查看此账号${$.name}是否正常`;
     }
   } catch (e) {
     console.log(`任务执行异常，请检查执行日志 ‼️‼️`);
@@ -1245,7 +1242,7 @@ function timeFormat(time) {
 }
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `https://raw.githubusercontent.com/shuye72/RandomShareCode/master/JD_Fruit.json`, timeout: 10000,}, (err, resp, data) => {
+    $.get({url: `https://raw.githubusercontent.com/shuye73/RandomShareCode/master/JD_Fruit.json`, timeout: 10000,}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
