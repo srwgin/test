@@ -13,10 +13,13 @@
 =========================Loon=============================
 [Script]
 cron "5 6-18/6 * * *" script-path=https://raw.githubusercontent.com/shuye73/MyActions/main/scripts/jd_fruit.js,tag=东东农场
+
 =========================Surge============================
 东东农场 = type=cron,cronexp="5 6-18/6 * * *",wake-system=1,timeout=120,script-path=https://raw.githubusercontent.com/shuye73/MyActions/main/scripts/jd_fruit.js
+
 =========================小火箭===========================
 东东农场 = type=cron,script-path=https://raw.githubusercontent.com/shuye73/MyActions/main/scripts/jd_fruit.js, cronexpr="5 6-18/6 * * *", timeout=200, enable=true
+
 jd免费水果 搬的https://github.com/liuxiaoyucc/jd-helper/blob/a6f275d9785748014fc6cca821e58427162e9336/fruit/fruit.js
 */
 const $ = new Env('东东农场');
@@ -1242,7 +1245,7 @@ function timeFormat(time) {
 }
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `https://github.com/srwgin/test/raw/main/JD_Fruit.json`, timeout: 10000,}, (err, resp, data) => {
+    $.get({url: `https://raw.githubusercontent.com/shuye73/RandomShareCode/master/JD_Fruit.json`, timeout: 10000,}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
