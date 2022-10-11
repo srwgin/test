@@ -2,8 +2,8 @@ name: test
 
 on:
     workflow_dispatch:
-    #schedule:
-        #- cron: "20 20,3,9 * * *"
+    schedule:
+        - cron: "20 20,3,9 * * *"
     watch:
         types: [started]
     repository_dispatch:
